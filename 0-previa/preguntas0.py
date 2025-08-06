@@ -23,7 +23,11 @@ respuestas = {}
 # %% [markdown]
 # # 1 - Preguntas sobre fundamentos
 #
-# Este notebook contiene una lista de preguntas junto con una lista exhaustiva de respuestas mutuamente contradictorias. A diferencia de los enunciados de tipo "multiple choise" en los que se pide seleccionar una única opción, aquí se pide que distribuyan creencias entre las diferentes opciones, asegurándose que el valor asignado sea positivo y la suma sea 1. La evaluación será el producto de las creencias asiganadas a las respuestas correctas. En caso de que la respuesta sea una variable aleatoria, se considerará la predicción típica a largo plazo, es decir, su media gométrica. Notar que un único cero en la secuencia anula todo el producto. Por ello, en caso de duda, no conviene que concentren toda su creencia en una sola opción, sino distribuir algo de creencia en todas las opciones que consideran posibles. Noten también que conviene asignar más a la opción en la que más creen, porque distribuir creencias en partes iguales entre todas las opciones no es mucho mejor que el azar (baseline).
+# Este notebook contiene una lista de preguntas junto con una lista exhaustiva de respuestas 
+# mutuamente contradictorias. A diferencia de los enunciados de tipo "multiple choise" 
+# en los que se pide seleccionar una única opción, aquí se pide que distribuyan creencias 
+# entre las diferentes opciones, asegurándose que el valor asignado sea positivo y la suma
+#  sea 1. La evaluación será el producto de las creencias asiganadas a las respuestas correctas. En caso de que la respuesta sea una variable aleatoria, se considerará la predicción típica a largo plazo, es decir, su media gométrica. Notar que un único cero en la secuencia anula todo el producto. Por ello, en caso de duda, no conviene que concentren toda su creencia en una sola opción, sino distribuir algo de creencia en todas las opciones que consideran posibles. Noten también que conviene asignar más a la opción en la que más creen, porque distribuir creencias en partes iguales entre todas las opciones no es mucho mejor que el azar (baseline).
 
 # %% [markdown]
 # ### 1.0 Moneda
@@ -35,15 +39,16 @@ respuestas = {}
 
 # %%
 respuestas[(1,0,"Moneda")] = [
-0, # 0. Cara
-0, # 1. Sello
+1/2, # 0. Cara
+1/2, # 1. Sello
 ""
 ]
 
 # %% [markdown]
 # ### 1.1 Cajas
 #
-# Hay tres cajas idénticas. Detrás de una de ellas hay un regalo. El resto están vacías. ¿Dónde está el regalo?
+# Hay tres cajas idénticas. Detrás de una de ellas hay un regalo. El resto están vacías. 
+# ¿Dónde está el regalo?
 #
 # 0. Caja 0
 # 1. Caja 1
@@ -52,9 +57,9 @@ respuestas[(1,0,"Moneda")] = [
 
 # %%
 respuestas[(1,1,"Cajas")] = [
-0, # 0. Caja 0
-0, # 1. Caja 1
-0, # 2. Caja 2
+1/3, # 0. Caja 0
+1/3, # 1. Caja 1
+1/3, # 2. Caja 2
 0, # 3. Otro lugar
 ""
 ]
@@ -74,7 +79,7 @@ respuestas[(1,1,"Cajas")] = [
 respuestas[(1,2,"Mentir")] = [
 0, # 0. Maxima incertidumbre (entropía)
 0, # 1. Minima incertidumbre (entropía)
-0, # 2. Maxima incertidumbre (entropía) dada la información disponible (restricciones)
+1, # 2. Maxima incertidumbre (entropía) dada la información disponible (restricciones)
 0, # 3. Minima incertidumbre (entropía) dada la información disponible (restricciones)
 0, # 4. Ninguna de las anteriores
 "",
@@ -83,7 +88,13 @@ respuestas[(1,2,"Mentir")] = [
 # %% [markdown]
 # ### 1.3 Universos
 #
-# Hay tres cajas idénticas. Detrás de una de ellas hay un regalo. El resto están vacías. Nos permiten reservar una caja. Luego, una persona elige una de las cajas que no contenga el regalo y no haya sido reservada. Supongamos que reservamos la caja 1. ¿Cuál de todos los universos paralelos va a ocurrir? ¿El regalo está en la caja 1 y nos muestran la caja 1? ¿El regalo está en la caja 1 y nos muestran la caja 2? ... ¿El regalo está en la caja 3 y nos muestran la caja 2? ¿El regalo está en la caja 3 y nos muestran la caja 3?
+# Hay tres cajas idénticas. Detrás de una de ellas hay un regalo. El resto están vacías. 
+# Nos permiten reservar una caja. Luego, una persona elige una de las cajas que no contenga 
+# el regalo y no haya sido reservada. Supongamos que reservamos la caja 1. 
+# ¿Cuál de todos los universos paralelos va a ocurrir? ¿El regalo está en la caja 1 y 
+# nos muestran la caja 1? ¿El regalo está en la caja 1 y nos muestran la caja 2? ... 
+# ¿El regalo está en la caja 3 y nos muestran la caja 2? ¿El regalo está en la caja 3 y 
+# nos muestran la caja 3?
 #
 # 0. Regalo = 1, Abren = 1
 # 1. Regalo = 1, Abren = 2
@@ -99,21 +110,27 @@ respuestas[(1,2,"Mentir")] = [
 # %%
 respuestas[(1,3,"Universos")] = [
 0, # 0. Regalo = 1, Abren = 1
-0, # 1. Regalo = 1, Abren = 2
-0, # 2. Regalo = 1, Abren = 3
+1/4, # 1. Regalo = 1, Abren = 2
+1/4, # 2. Regalo = 1, Abren = 3
 0, # 3. Regalo = 2, Abren = 1
 0, # 4. Regalo = 2, Abren = 2
-0, # 5. Regalo = 2, Abren = 3
+1/4, # 5. Regalo = 2, Abren = 3
 0, # 6. Regalo = 3, Abren = 1
-0, # 7. Regalo = 3, Abren = 2
+1/4, # 7. Regalo = 3, Abren = 2
 0, # 8. Regalo = 3, Abren = 3
-"Justifique brevemente",
+"Definimos que la caja 1 es la que reservamos, por lo tanto, en un primer momento no tiene sentido dentro del ejercicio que se abrá la caja 1,"
+"Por otro lado, el ejercici dice que se abre la caa que no tiene el regalo, por lo tanto tampoco  tendría sentido, por ejemplo, que abramos la caa 2 si el regalo esta en esa misma",
 ]
 
 # %% [markdown]
 # ### 1.4 Razonamiento
 #
-# Desde su descubierto, las reglas de la probabilidad han sido adoptadas como sistema de razonamiento en todas las ciencias con datos desde la física hasta las ciencias sociales. En los últimos años se ha producido enormes avances en el área de las ciencia de datos, el aprendizaje automático y la inteligencia artificial. ¿Cuándo se comenzó a usar por primer vez el actual sistema de razonamiento para contextos de incertidumbre?
+# Desde su descubierto, las reglas de la probabilidad han sido adoptadas como sistema de 
+# razonamiento en todas las ciencias con datos desde la física hasta las ciencias sociales. 
+# En los últimos años se ha producido enormes avances en el área de las ciencia de datos, 
+# el aprendizaje automático y la inteligencia artificial. 
+# ¿Cuándo se comenzó a usar por primer vez el actual sistema de razonamiento para contextos 
+# de incertidumbre?
 #
 # 0. Antes del siglo 17
 # 1. Siglo 17
@@ -128,18 +145,19 @@ respuestas[(1,3,"Universos")] = [
 # %%
 respuestas[(1,4,"Razonamiento")] = [
 0, # 0. Antes del siglo 17
-0, # 1. Siglo 17
-0, # 2. Siglo 18
+1/2, # 1. Siglo 17
+1/2, # 2. Siglo 18
 0, # 3. Siglo 19
 0, # 4. Siglo 20
 0, # 5. Siglo 21
-"",
+"Encontre que pascal y fermat comenzaron en el siglo 17 y laplace lo continuo en el siglo 18 con el pricipio de indiferencia",
 ]
 
 # %% [markdown]
 # ### 1.5 Independencia
 #
-# Si P(A) = 0.4, P(B) = 0.5, y A y B son eventos independientes, ¿cuál es la probabilidad conjunta de P(A, B)?
+# Si P(A) = 0.4, P(B) = 0.5, y A y B son eventos independientes, ¿cuál es la probabilidad 
+# conjunta de P(A, B)?
 #
 # 0. 0.9
 # 1. 0.1
@@ -152,15 +170,17 @@ respuestas[(1,5,"Independencia")] = [
 0, # 0. 0.9
 0, # 1. 0.1
 0, # 2. 0.0
-0, # 3. 0.2
+1, # 3. 0.2
 0, # 4. Ninguna de las anteriores
-"Justificar brevemente",
+"Lo que se busca es el valor de la interseccion, al ser eventos independientes su la probabiblidad de su union es 0 y por lo tanto la interseccion es la multiplicacion de la probabibilidad de cada evento por separado",
 ]
 
 # %% [markdown]
 # ### 1.6 Marginal
 #
-# Sean dos variables binarias, X e Y, con las siguientes probabilidades conjuntas, P(X=0, Y=0) = 0.1, P(X=1, Y=0) = 0.2, P(X=0, Y=1) = 0.3, P(X=1, Y=1) = 0.4 ¿Cuál es la probabilidad de P(Y = 1)?
+# Sean dos variables binarias, X e Y, con las siguientes probabilidades conjuntas, 
+# P(X=0, Y=0) = 0.1, P(X=1, Y=0) = 0.2, P(X=0, Y=1) = 0.3, P(X=1, Y=1) = 0.4 
+# ¿Cuál es la probabilidad de P(Y = 1)?
 #
 #
 # 1. P(Y=1): 0.10
@@ -196,20 +216,22 @@ respuestas[(1,6,"Marginal")] = [
 0, # 9. P(Y=1): 0.55
 0, # 10. P(Y=1): 0.60
 0, # 11. P(Y=1): 0.65
-0, # 12. P(Y=1): 0.70
+1, # 12. P(Y=1): 0.70
 0, # 13. P(Y=1): 0.75
 0, # 14. P(Y=1): 0.80
 0, # 15. P(Y=1): 0.85
 0, # 16. P(Y=1): 0.90
 0, # 17. Ninguna de las anteriores
-"Justifique brevemente.",
+"Lo obtuve sumando las os probabilidades que tienen el y=1 sin importar la x, porque son todas las veces que me podria dar y=1.",
 ]
 
 
 # %% [markdown]
 # ### 1.7 Condicional
 #
-# Sean dos variables binarias, X e Y, con las siguientes probabilidades conjuntas, P(X=0, Y=0) = 0.1, P(X=1, Y=0) = 0.2, P(X=0, Y=1) = 0.3, P(X=1, Y=1) = 0.4 ¿Cuál es la probabilidad de P(Y = 1|X = 1)?
+# Sean dos variables binarias, X e Y, con las siguientes probabilidades conjuntas, 
+# P(X=0, Y=0) = 0.1, P(X=1, Y=0) = 0.2, P(X=0, Y=1) = 0.3, P(X=1, Y=1) = 0.4 
+# ¿Cuál es la probabilidad de P(Y = 1|X = 1)?
 #
 #
 # 1. P(Y=1|X=1): 1/2
@@ -234,7 +256,7 @@ respuestas[(1,6,"Marginal")] = [
 respuestas[(1,7,"Condicional")] = [
 0, # 0. P(Y=1|X=1): 1/2
 0, # 1. P(Y=1|X=1): 1/3
-0, # 2. P(Y=1|X=1): 2/3
+1/2, # 2. P(Y=1|X=1): 2/3
 0, # 3. P(Y=1|X=1): 1/4
 0, # 4. P(Y=1|X=1): 2/4
 0, # 5. P(Y=1|X=1): 3/4
@@ -245,17 +267,19 @@ respuestas[(1,7,"Condicional")] = [
 0, # 10. P(Y=1|X=1): 1/6
 0, # 11. P(Y=1|X=1): 2/6
 0, # 12. P(Y=1|X=1): 3/6
-0, # 13. P(Y=1|X=1): 4/6
+1/2, # 13. P(Y=1|X=1): 4/6
 0, # 14. P(Y=1|X=1): 5/6
 0, # 15. Ninguna de las anteriores
-"Justifique brevemente.",
+"Lo obtuve dividiendo P(y=1, x=1) por P(x=1), que seria P(x=1, y=0), P(x=1, y=1), me dio 4/6 que es equivalente a 2/3 por eso dividi las creencias, aunque ambas son las correctas y serian 1 en realidad",
 ]
 
 
 # %% [markdown]
 # ### 1.8 Overfitting
 #
-# En el área de aprendizaje automático e inteligencia artificial se ha descubierto un problema que se conoce con el nombre de overfitting. ¿El overfitting es/era un problema propio del sistema de razonamiento para contextos de incertidumbre?
+# En el área de aprendizaje automático e inteligencia artificial se ha descubierto un problema
+#  que se conoce con el nombre de overfitting. ¿El overfitting es/era un problema propio del 
+# sistema de razonamiento para contextos de incertidumbre?
 #
 # 0. No
 # 1. Sí
@@ -263,51 +287,63 @@ respuestas[(1,7,"Condicional")] = [
 
 # %%
 respuestas[(1,8,"Overfitting")] = [
-0, # 0. No
+1, # 0. No
 0, # 1. Si
-"",
+"No es un problema unicamente de la probabilidad sino más biende como se aplican esos principios en aprendizaje automatico e inteligencia artificial",
 ]
 
 # %% [markdown]
 # ### 1.9 Evaluación
 #
-# En el área de aprendizaje automático e inteligencia artificial existe una gran cantidad de métricas distintas para evaluar los modelos alternativos. ¿En principio, existe una forma correcta, universal, de evaluar los modelos? 
+# En el área de aprendizaje automático e inteligencia artificial existe una gran cantidad de 
+# métricas distintas para evaluar los modelos alternativos. ¿En principio, existe una forma 
+# correcta, universal, de evaluar los modelos? 
 #
 # 0. NO
 # 1. Sí
 
 # %%
 respuestas[(1,9,"Evaluación")] = [
-0, # 0. No
+1, # 0. No
 0, # 1. Si
-"Justifique brevemente",
+"Creo que cada problema tiene su manera de ser evaluada dependiendo de las variables o datos que haya, por ejemplo, si son binarias o no; así como también del objetivo del modelo",
 ]
 
 # %% [markdown]
 # ### 1.10 Predicción
 #
-# Históricamente todas las ciencias con datos, desde la física hasta las ciencias sociales, explicaron el mundo a través de teorías causales. Los recientes avances en el área de aprendizaje automático e inteligencia artificial, sin embargo, se produjeron por el desarrollo de algoritmos altamente predictivos sin ninguna interpretación causal. ¿Por qué?
+# Históricamente todas las ciencias con datos, desde la física hasta las ciencias sociales, 
+# explicaron el mundo a través de teorías causales. Los recientes avances en el área de 
+# aprendizaje automático e inteligencia artificial, sin embargo, se produjeron por el desarrollo 
+# de algoritmos altamente predictivos sin ninguna interpretación causal. ¿Por qué?
 #
-# 0. El modelo causal correcto nunca puede ser mejor prediciendo que los complejos algoritmos de AI/ML.
-# 1. El modelo causal correcto a veces puede ser mejor, y a veces peor, que los complejos algoritmos de AI/ML.
-# 2. El modelo causal correcto nunca puede ser peor prediciendo que los complejos algoritmos de AI/ML.
+# 0. El modelo causal correcto nunca puede ser mejor prediciendo que los complejos algoritmos 
+# de AI/ML.
+# 1. El modelo causal correcto a veces puede ser mejor, y a veces peor, que los complejos 
+# algoritmos de AI/ML.
+# 2. El modelo causal correcto nunca puede ser peor prediciendo que los complejos algoritmos 
+# de AI/ML.
 # 3. Los modelos causales solo explican, no predicen.
 # 4. Ninguna de las anteriores
 
 # %%
 respuestas[(1,10,"Predicción")] = [
 0, # 0. El modelo causal correcto nunca puede ser mejor prediciendo que los complejos algoritmos de AI/ML.
-0, # 1. El modelo causal correcto a veces puede ser mejor, y a veces peor, que los complejos algoritmos de AI/ML.
+1, # 1. El modelo causal correcto a veces puede ser mejor, y a veces peor, que los complejos algoritmos de AI/ML.
 0, # 2. El modelo causal correcto nunca puede ser peor prediciendo que los complejos algoritmos de AI/ML.
 0, # 3. Los modelos causales solo explican, no predicen.
 0, # 4. Ninguna de las anteriores
-"Justifique brevemente",
+"depende del contexto y la calidad del modelo a veces puede ser mejor el causasl y a veces no. La 0 y 2 son incorrectas, ya que puedo tener un buen modelo causal y uno de ML/AI muy malo y viceversa. L tres es incorrecta porque un modelo causal también puede predecir, pero de forma diferente",
 ]
 
 # %% [markdown]
 # ### 1.11 Diversificación
 #
-# Una casa de apuestas 3 a Cara y 1.2 a Sello por el lanzamiento de monedas normales con 0.5 de probabilidad de que salga Cara o Sello. Supongamos que nos ofrecen jugar 1000 veces, apostando todos nuestros recursos en cada paso temporal. ¿Qué proporción apostaría a Cara? Notar que el resto se asigna a Sello. Notar además que si apostamos todo a Cara y sale Sello perdemos todos los recursos y no podemos volver a jugar.
+# Una casa de apuestas 3 a Cara y 1.2 a Sello por el lanzamiento de monedas normales con 0.5 
+# de probabilidad de que salga Cara o Sello. Supongamos que nos ofrecen jugar 1000 veces, 
+# apostando todos nuestros recursos en cada paso temporal. ¿Qué proporción apostaría a Cara? 
+# Notar que el resto se asigna a Sello. Notar además que si apostamos todo a Cara y sale Sello 
+# perdemos todos los recursos y no podemos volver a jugar.
 #
 # 0. Recursos asignados a Cara: 0.0
 # 1. Recursos asignados a Cara: 0.1
@@ -326,36 +362,46 @@ respuestas[(1,11,"Diversificación")] = [
 0, # 0. Recursos asignados a Cara: 0.0
 0, # 1. Recursos asignados a Cara: 0.1
 0, # 2. Recursos asignados a Cara: 0.2
-0, # 3. Recursos asignados a Cara: 0.3
-0, # 4. Recursos asignados a Cara: 0.4
+1/2, # 3. Recursos asignados a Cara: 0.3
+1/2, # 4. Recursos asignados a Cara: 0.4
 0, # 5. Recursos asignados a Cara: 0.5
 0, # 6. Recursos asignados a Cara: 0.6
 0, # 7. Recursos asignados a Cara: 0.7
 0, # 8. Recursos asignados a Cara: 0.8
 0, # 9. Recursos asignados a Cara: 0.9
 0, # 10. Recursos asignados a Cara: 1.0
-"Justifique brevemente.",
+"Como cara me da más ganancia apuesto menos de mis recursos, así tengo aproximadamente la misma ganancia según el resultado en cada partida.",
 ]
 
 # %% [markdown]
 # ### 1.12 Apuesta individual
 #
-# Una casa de apuestas paga 3 por Cara y 1.2 por Sello. La moneda tiene 0.5 de probabilidad de que salga Cara o Sello. Nos ofrecen jugar 1000 veces, apostando en cada ocasión todos nuestros recursos, 50% a Cara y 50% a Sello. Notar que la esperanza (media aritmética) es positiva (1,05). ¿Nos conviene jugar?
+# Una casa de apuestas paga 3 por Cara y 1.2 por Sello. La moneda tiene 0.5 de probabilidad de
+# que salga Cara o Sello. Nos ofrecen jugar 1000 veces, apostando en cada ocasión todos 
+# nuestros recursos, 50% a Cara y 50% a Sello. Notar que la esperanza (media aritmética) 
+# es positiva (1,05). ¿Nos conviene jugar?
 #
 # 0. NO
 # 1. Sí
 
 # %%
 respuestas[(1,12,"Apuesta individual")] = [
-0, # 0. No
+1, # 0. No
 0, # 1. Sí
-"Justifique brevemente.",
+"En realidad, sia sale cara te mantenes igual y si seca perdes dinero, esto es porque si sale cara estarias multplicando el valor inicial por 1,5 y luego le restas 0,5 de lo perdido en seca",
 ]
 
 # %% [markdown]
 # ### 1.13 Fondo común
 #
-# Una casa de apuestas paga 3 por Cara y 1.2 por Sello. La moneda tiene 0.5 de probabilidad de que salga Cara o Sello. Nos ofrecen jugar 1000 veces, apostando en cada ocasión todos nuestros recursos, 50% a Cara y 50% a Sello. A diferencia del caso anterior, aquí nos vemos en la obligación en cada paso temporal junto con otras 100 personas a dividir todos nuestros recursos en partes iguales. Es decir, en cada paso temporal cada persona tira la su propia moneda, actualiza sus propios recursos individuales, los pone en el fondo común, se dividen en partes iguales y volvemos a empezar. ¿Este simple hecho, mejora o empeora nuestra tasa de crecimiento de nuestros recursos?
+# Una casa de apuestas paga 3 por Cara y 1.2 por Sello. La moneda tiene 0.5 de probabilidad de
+#  que salga Cara o Sello. Nos ofrecen jugar 1000 veces, apostando en cada ocasión todos nuestros 
+# recursos, 50% a Cara y 50% a Sello. A diferencia del caso anterior, aquí nos vemos en la 
+# obligación en cada paso temporal junto con otras 100 personas a dividir todos nuestros 
+# recursos en partes iguales. Es decir, en cada paso temporal cada persona tira la su propia 
+# moneda, actualiza sus propios recursos individuales, los pone en el fondo común, se dividen 
+# en partes iguales y volvemos a empezar. ¿Este simple hecho, mejora o empeora nuestra tasa de 
+# crecimiento de nuestros recursos?
 #
 # 0. Empeora
 # 1. Neutro
@@ -373,7 +419,12 @@ respuestas[(1,13,"Fondo común")] = [
 # %% [markdown]
 # ### 1.14 Tragedia de los comunes
 #
-# Una casa de apuestas paga 3 por Cara y 1.2 por Sello. La moneda tiene 0.5 de probabilidad de que salga Cara o Sello. Nos ofrecen jugar 1000 veces, apostando en cada ocasión todos nuestros recursos, 50% a Cara y 50% a Sello. Supongamos que para nuestras apuestas contamos con el apoyo de otras 100 personas que están aportando en cada paso temporal a un fondo que se divide en partes iguales. ¿Nos conviene aportar al fondo común o nos conviene dejar de aportar y seguir recibiendo la cuota del fondo común?
+# Una casa de apuestas paga 3 por Cara y 1.2 por Sello. La moneda tiene 0.5 de probabilidad de 
+# que salga Cara o Sello. Nos ofrecen jugar 1000 veces, apostando en cada ocasión todos nuestros
+#  recursos, 50% a Cara y 50% a Sello. Supongamos que para nuestras apuestas contamos con el 
+# apoyo de otras 100 personas que están aportando en cada paso temporal a un fondo que se divide 
+# en partes iguales. ¿Nos conviene aportar al fondo común o nos conviene dejar de aportar y 
+# seguir recibiendo la cuota del fondo común?
 #
 # 0. Nos conviene aportar al fondo común
 # 1. Es indistinto
