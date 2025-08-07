@@ -119,7 +119,7 @@ respuestas[(1,3,"Universos")] = [
 1/4, # 7. Regalo = 3, Abren = 2
 0, # 8. Regalo = 3, Abren = 3
 "Definimos que la caja 1 es la que reservamos, por lo tanto, en un primer momento no tiene sentido dentro del ejercicio que se abrá la caja 1,"
-"Por otro lado, el ejercici dice que se abre la caa que no tiene el regalo, por lo tanto tampoco  tendría sentido, por ejemplo, que abramos la caa 2 si el regalo esta en esa misma",
+"Por otro lado, el ejercicio dice que se abre la caa que no tiene el regalo, por lo tanto tampoco  tendría sentido, por ejemplo, que abramos la caa 2 si el regalo esta en esa misma",
 ]
 
 # %% [markdown]
@@ -150,7 +150,7 @@ respuestas[(1,4,"Razonamiento")] = [
 0, # 3. Siglo 19
 0, # 4. Siglo 20
 0, # 5. Siglo 21
-"Encontre que pascal y fermat comenzaron en el siglo 17 y laplace lo continuo en el siglo 18 con el pricipio de indiferencia",
+"Pascal y Fermat comenzaron en el siglo 17 y Laplace, entre otros matematicos, refinaron uso de la probabilidad en contextos de incertidumbre",
 ]
 
 # %% [markdown]
@@ -172,7 +172,7 @@ respuestas[(1,5,"Independencia")] = [
 0, # 2. 0.0
 1, # 3. 0.2
 0, # 4. Ninguna de las anteriores
-"Lo que se busca es el valor de la interseccion, al ser eventos independientes su la probabiblidad de su union es 0 y por lo tanto la interseccion es la multiplicacion de la probabibilidad de cada evento por separado",
+"Lo que se busca es el valor de la interseccion, al ser eventos independientes la interseccion es la multiplicacion de la probabibilidad de cada evento por separado",
 ]
 
 # %% [markdown]
@@ -222,7 +222,7 @@ respuestas[(1,6,"Marginal")] = [
 0, # 15. P(Y=1): 0.85
 0, # 16. P(Y=1): 0.90
 0, # 17. Ninguna de las anteriores
-"Lo obtuve sumando las os probabilidades que tienen el y=1 sin importar la x, porque son todas las veces que me podria dar y=1.",
+"Lo obtuve sumando las probabilidades que tienen el y=1 sin importar la x, porque son todas las veces que me podria dar y=1.",
 ]
 
 
@@ -270,7 +270,7 @@ respuestas[(1,7,"Condicional")] = [
 1/2, # 13. P(Y=1|X=1): 4/6
 0, # 14. P(Y=1|X=1): 5/6
 0, # 15. Ninguna de las anteriores
-"Lo obtuve dividiendo P(y=1, x=1) por P(x=1), que seria P(x=1, y=0), P(x=1, y=1), me dio 4/6 que es equivalente a 2/3 por eso dividi las creencias, aunque ambas son las correctas y serian 1 en realidad",
+"Lo obtuve dividiendo P(y=1, x=1) por P(x=1), que seria P(x=1, y=0)+P(x=1, y=1), me dio 4/6 que es equivalente a 2/3 por eso dividi las creencias, aunque ambas son las correctas y serian 1 en realidad",
 ]
 
 
@@ -289,7 +289,7 @@ respuestas[(1,7,"Condicional")] = [
 respuestas[(1,8,"Overfitting")] = [
 1, # 0. No
 0, # 1. Si
-"No es un problema unicamente de la probabilidad sino más biende como se aplican esos principios en aprendizaje automatico e inteligencia artificial",
+"No es problema propio de la probabilidad sino mas bien que surge de la aplicacion de algoritmos a los datos ",
 ]
 
 # %% [markdown]
@@ -306,7 +306,7 @@ respuestas[(1,8,"Overfitting")] = [
 respuestas[(1,9,"Evaluación")] = [
 1, # 0. No
 0, # 1. Si
-"Creo que cada problema tiene su manera de ser evaluada dependiendo de las variables o datos que haya, por ejemplo, si son binarias o no; así como también del objetivo del modelo",
+"Creo que cada problema tiene su manera de ser evaluada dependiendo de las variables o datos que haya, así como también del objetivo del modelo",
 ]
 
 # %% [markdown]
@@ -333,7 +333,7 @@ respuestas[(1,10,"Predicción")] = [
 0, # 2. El modelo causal correcto nunca puede ser peor prediciendo que los complejos algoritmos de AI/ML.
 0, # 3. Los modelos causales solo explican, no predicen.
 0, # 4. Ninguna de las anteriores
-"depende del contexto y la calidad del modelo a veces puede ser mejor el causasl y a veces no. La 0 y 2 son incorrectas, ya que puedo tener un buen modelo causal y uno de ML/AI muy malo y viceversa. L tres es incorrecta porque un modelo causal también puede predecir, pero de forma diferente",
+"depende del contexto y la calidad del modelo a veces puede ser mejor el causasl y a veces no. La 0 y 2 son incorrectas, ya que puedo tener un buen modelo causal pero que no me sirva. La tres es incorrecta porque un modelo causal también puede predecir, pero de forma diferente",
 ]
 
 # %% [markdown]
@@ -388,7 +388,7 @@ respuestas[(1,11,"Diversificación")] = [
 respuestas[(1,12,"Apuesta individual")] = [
 1, # 0. No
 0, # 1. Sí
-"En realidad, sia sale cara te mantenes igual y si seca perdes dinero, esto es porque si sale cara estarias multplicando el valor inicial por 1,5 y luego le restas 0,5 de lo perdido en seca",
+"Por lo que entiendo del ejercicio, si sale cara multiplicas tu capital inicial por 1,5 y si sale seca por 0,6. Por lo tanto, creo que no convine jugar, ya que lo que ganas cuando te sale cara los perdes cuando te sale seca.",
 ]
 
 # %% [markdown]
@@ -412,8 +412,8 @@ respuestas[(1,12,"Apuesta individual")] = [
 respuestas[(1,13,"Fondo común")] = [
 0, # 0. Empeora
 0, # 1. Neutro
-0, # 1. Mejora
-"Justifique brevemente.",
+1, # 1. Mejora
+"Al ser colectivo la varianza indivudual que era alta ahora se redistrbuye y por lo tanto, el riesgo disminuye.",
 ]
 
 # %% [markdown]
@@ -433,10 +433,10 @@ respuestas[(1,13,"Fondo común")] = [
 
 # %%
 respuestas[(1,14,"Tragedia de los comunes")] = [
-0, # 0. Nos conviene aportar al fondo común
+1/2, # 0. Nos conviene aportar al fondo común
 0, # 1. Es indistinto
-0, # 1. Nos conviene dejar de aportar mientras seguimos recibiendo la cuota del fondo común
-"Justifique brevemente.",
+1/2, # 1. Nos conviene dejar de aportar mientras seguimos recibiendo la cuota del fondo común
+"Por lo que entiendo de este ejercicio me conviene no aportar al fondo común porque recibo el dinero sin el riesgo de perder, pero a la vez, si muchos hacen eso, no habria ganancia para nadie.",
 ]
 
 
